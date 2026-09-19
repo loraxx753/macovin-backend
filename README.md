@@ -30,18 +30,20 @@ npm start
 | Variable | Default | Notes |
 | --- | --- | --- |
 | `PORT` | `3001` | HTTP port |
-| `CORS_ORIGINS` | local Vite/Webpack ports | Comma-separated allowed origins |
+| `CORS_ORIGINS` | local ports + `https://macovin.com` + `https://www.macovin.com` | Comma-separated allowed origins. If you set this on Railway, list every origin you need (defaults are replaced, not merged). |
 | `CONTACT_DATA_DIR` | `./data` | Where contact submissions are appended |
 
 Copy `.env.example` to `.env` and edit as needed.
 
-**Production CORS:** set `CORS_ORIGINS` to your live site origin when you deploy, for example:
+**Production CORS (Railway):** prefer an explicit list so cutover URLs are covered:
 
 ```bash
-CORS_ORIGINS=https://macovin.example
+CORS_ORIGINS=https://macovin.com,https://www.macovin.com,https://YOUR-FRONTEND.up.railway.app
 ```
 
-Local defaults already allow `http://localhost:3000`, `http://localhost:5173`, and the matching `127.0.0.1` hosts.
+If `CORS_ORIGINS` is unset, the API already allows local ports plus the two company custom domains.
+
+Local defaults also allow `http://localhost:3000`, `http://localhost:5173`, and the matching `127.0.0.1` hosts.
 
 ## Endpoints
 
