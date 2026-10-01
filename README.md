@@ -2,7 +2,7 @@
 
 Thin API for the [Macovin](https://github.com/loraxx753/macovin) company website ([macovin-frontend](https://github.com/loraxx753/macovin-frontend)).
 
-People-facing company site support only. No auth, CMS, payments, or buffet domain.
+People-facing company site support only. No auth, CMS, or payments.
 
 ## Stack
 
@@ -76,14 +76,8 @@ curl -X POST http://localhost:3001/api/contact \
 
 Success: `201 { "ok": true }`. Validation errors: `400` with field details.
 
-### `GET /api/examples`
-
-Optional static blurbs for site examples (elder care, Texas workers’ rights). Frontend may also hardcode from macovin `project-ideas`.
-
-### `GET /api/examples/:id`
-
-One example by id (`elder-care` or `texas-workers-rights`).
+Work page examples live in the frontend (`macovin-frontend/src/lib/examples.ts`), not here.
 
 ## Out of scope (for now)
 
-Auth, CMS, payments, buffet product domain, inventing prices or fundraising details.
+Auth, CMS, payments, inventing prices or fundraising details.

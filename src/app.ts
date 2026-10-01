@@ -3,7 +3,6 @@ import cors from "cors";
 import { config } from "./config";
 import { healthRouter } from "./routes/health";
 import { contactRouter } from "./routes/contact";
-import { examplesRouter } from "./routes/examples";
 
 export function createApp() {
   const app = express();
@@ -19,7 +18,6 @@ export function createApp() {
 
   app.use(healthRouter);
   app.use("/api", contactRouter);
-  app.use("/api", examplesRouter);
 
   app.use(
     (
